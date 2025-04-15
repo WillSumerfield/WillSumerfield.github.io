@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - HeroForum</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the HeroForum</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="forum-threads">
+            <h2>Forum Threads</h2>
+            <ul>
+                <li><a href="#">Thread 1: Introduction to HeroForum</a></li>
+                <li><a href="#">Thread 2: Forum Guidelines</a></li>
+                <li><a href="#">Thread 3: Feature Requests</a></li>
+                <!-- Add more threads as needed -->
+            </ul>
+        </section>
+
+        <section id="new-thread">
+            <h2>Create a New Thread</h2>
+            <form action="#" method="post">
+                <label for="thread-title">Thread Title:</label>
+                <input type="text" id="thread-title" name="thread-title" required>
+                
+                <label for="thread-content">Content:</label>
+                <textarea id="thread-content" name="thread-content" required></textarea>
+                
+                <button type="submit">Post Thread</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 HeroForum. All rights reserved.</p>
+    </footer>
+
+    <script src="../assets/js/scripts.js"></script>
+</body>
+</html>
