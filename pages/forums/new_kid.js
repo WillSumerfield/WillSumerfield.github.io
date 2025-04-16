@@ -26,7 +26,7 @@ Anchor (bc he locks people down)
 Kid Titan (corny af, but kinda fits)
 
 Grip (simple, effective)`),
-  new Post("wbc", "08/17/02 10:117 PM", `Not “Kid Titan,” that sounds like a knockoff brand. I kinda like Grip, tbh.
+  new Post("wbc", "08/17/02 10:17 PM", `Not “Kid Titan,” that sounds like a knockoff brand. I kinda like Grip, tbh.
 But yeah, if anyone else spots him, post here. No way this is the last we see of him.`)
 ];
 
