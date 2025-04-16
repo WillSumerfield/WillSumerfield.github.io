@@ -8,7 +8,7 @@ const posts = [
   new Post("sci", "06/01/02 10:29 PM", `Bad mod >:/`),
   new Post("sci", "06/01/02 10:29 PM", `Wasn't there, sorry to hear that Hamster, but happy to chat if you want <3`),
   new Post("ham", "06/01/02 10:31 PM", `Thanks Ciri <3
-    That would be nice. I guess I'll just start beginning?`),
+  That would be nice. I guess I'll just start beginning?`),
   new Post("sci", "06/01/02 10:32 PM", `That's the best place to start!`),
   new Post("ham", "06/01/02 10:34 PM", `Okay, so basically my family and I live pretty near the boardwalk, and we decided to hang out at the beach after school since it was so hot today. We clearly weren't the only ones with that idea, because the beach was pretty packed. My sister was being obnoxious, so I decided to swim while the family were sunbathing.`),
   new Post("ham", "06/01/02 10:36 PM", `I was in kind of a bad mood, and I didn't really feel like swimming. Just ended up standing in the water at shoulder-height. There were lots of people swimming further out, so I was just kinda watching them swim, and thinkin. Idk. Maybe that's weird. I was zoning out, and I didn't really notice when the normal beach play-shouting turned into screams.`),
