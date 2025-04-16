@@ -6,103 +6,6 @@
     <title>Hero Forum</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-        :root {
-            --main-color: #df1324f5;
-            --secondary-color: #1518c9;
-            --border-color: #ccc;
-            --border2-color:rgb(8, 8, 8);
-            --bg-color: #a8bcdb;
-            --bg2-color: #1664ad;
-            --table-bg-color: #f9f9f9;
-            --table-bg2-color: #dfdfdf;
-            --text-color: #0f0f0f;
-            --text2-color: white;
-            --text3-color: rgb(0, 12, 68);
-            --text4-color: rgb(34, 38, 53);
-        }
-        body {
-            font-family: Monospace;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: var(--main-color);
-            color: var(--text-color);/* var(--secondary-color); */
-            padding: 0; /* Removed vertical padding */
-            text-align: left;
-            border: 1px solid var(--border2-color);
-            height: 64px;
-            background-image: url('assets/images/mask.png'); /* Add mask image */
-            background-repeat: no-repeat;
-            background-position: 24px -42px; /* Position the mask on the left */
-            background-size: 384px; /* Adjust size of the mask */
-            background-blend-mode: multiply; /* Blend the mask with the background color */
-            display: flex;
-            align-items: center; /* Vertically align the text */
-            position: relative; /* Enable positioning for child elements */
-            justify-content: center; /* Center content horizontally */
-            gap: 10px; /* Add spacing between elements */
-        }
-        header h1 {
-            font: 5em 'Bauhaus 93', cursive;
-            margin: 2px;
-            text-align: top;
-            line-height: 0.8;
-            position: absolute; /* Position relative to the screen */
-            top: 50%; /* Move to the vertical center */
-            left: 50%; /* Move to the horizontal center */
-            transform: translate(-50%, -50%); /* Adjust for the element's own dimensions */
-            white-space: nowrap; /* Prevent text wrapping */
-        }
-        .localization-name {
-
-            font: 1em "Bauhaus 93";
-            color: var(--text4-color);
-            margin-left: 10px; /* Add spacing to the right of the H1 */
-            text-align: left;
-            line-height: 1.2;
-            position: absolute; /* Position relative to the screen */
-            top: 68%; /* Move to the vertical center */
-            left: calc(50% + 388px); /* Move to the horizontal center */
-            transform: translate(-50%, -50%); /* Adjust for the element's own dimensions */
-        }
-        .user-status {
-            font-size: 1em;
-            color: var(--text2-color);
-            font-family: Monospace;
-            border: 1px solid var(--border2-color); /* Added border */
-            position: relative;
-            height: 80%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-left: auto;
-            background-color: var(--bg2-color);
-            border-radius: 4px;
-            margin-right: 20px;
-            padding: 0 5px 0 5px;
-        }
-        .username {
-            padding-top: 5px;
-            color: var(--text3-color);
-            font: bold 1.1em 'Verdana', sans-serif;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-        nav ul li {
-            margin-right: 15px;
-        }
-        nav ul li a {
-            color: var(--background-color);
-            text-decoration: none;
-        }
         main {
             padding: 20px;
         }
@@ -140,15 +43,6 @@
         }
         table tr:nth-child(even) {
             background-color: var(--table-bg2-color);
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: var(--secondary-color);
-            color: var(--text2-color);
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
         main h3 {
             font-size: 1.0em;
@@ -206,14 +100,7 @@
     <link rel="icon" href="assets/images/mask_icon.png" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <h1>MASKS <span style="color: var(--secondary-color);">&</span> MESSAGES</h1>
-        <span class="localization-name">ARKHAM,<br>MASSACHUSETTS</span>
-        <div class="user-status">
-            <span>Logged in as:</span>
-            <span id="username" class="username">Guest592</span>
-        </div>
-    </header>
+    <div data-include="header.html"></div>
     <main>
         <table>
             <thead>
@@ -246,21 +133,21 @@
             <tbody>
                 <tr>
                     <td><img src="assets/images/thread.gif" alt="Icon"></td>
-                    <td><a href="pages/topic1.html">How to become a hero?</a></td>
+                    <td><a href="pages/forum.html?topic=new_kid">How to become a hero?</a></td>
                     <td>Admin</td>
                     <td>15</td>
                     <td>April 13, 2025</td>
                 </tr>
                 <tr>
                     <td><img src="assets/images/thread.gif" alt="Icon"></td>
-                    <td><a href="pages/topic2.html">Favorite superhero movies</a></td>
+                    <td><a href="pages/about.html">Favorite superhero movies</a></td>
                     <td>JaneDoe</td>
                     <td>8</td>
                     <td>April 12, 2025</td>
                 </tr>
                 <tr>
                     <td><img src="assets/images/thread.gif" alt="Icon"></td>
-                    <td><a href="pages/topic3.html">Hero training tips</a></td>
+                    <td><a href="pages/index.html">Hero training tips</a></td>
                     <td>HeroFan99</td>
                     <td>20</td>
                     <td>April 11, 2025</td>
@@ -285,9 +172,8 @@
                 </li>
             </ul>
         </div>
+        <div data-include="footer.html"></div>
     </main>
-    <footer>
-        <p>&copy; 2002 Masks and Messages. All rights reserved.</p>
-    </footer>
+    <script src="assets/js/include.js" type="module"></script>
 </body>
 </html>

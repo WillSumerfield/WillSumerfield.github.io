@@ -1,52 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum - HeroForum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Forum</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .forum-title {
+            font-family: "Barlow", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            padding: 20px 0 0 10px;
+            color: var(--forum-title-color);
+        }
+        .post { 
+            margin: 0 10px;
+        }
+        .user_space {   
+            padding: 0;
+            text-align: center;
+        }
+        .username {
+            font-weight: bold;
+            text-decoration: underline;
+            color: var(--username-color);
+            font-size: 1.0em;
+            padding: 0 0 5px 0;
+        }
+        .user_icon { 
+            width: 96px; 
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .content {
+            white-space: pre-wrap;
+            text-align: top left;
+        }
+
+        h1 {
+            padding: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0; /* Removed spacing above the table */
+            background-color: var(--table-bg-color);
+            table-layout: fixed; /* Added to enable fixed column widths */
+        }
+        .post_num {
+            text-align: right;
+            padding: 2px 6px 2px 0;
+        }
+        .date_time {
+            color: var(--text4-color);
+            text-align: left;
+            font-size: 0.9em;
+            padding: 2px;
+        }
+        .date_time_text {
+            padding: 0;
+        }
+        .date_time_img {
+            padding: 0px;
+            vertical-align: middle;
+        }
+        table th, table td {
+            border: 1px solid var(--border2-color);
+            padding: 5px;
+            text-align: left;
+        }
+        table td:nth-child(1), table th:nth-child(1) {
+            width: 156px; /* Set a fixed width for the icon column */
+        }
+        table td:nth-child(2), table th:nth-child(2) {
+            width: auto; /* Adjust remaining columns to fill available space */
+        }
+        table th {
+            background-color: var(--post-head-bg-color);
+        }
+        table tr:nth-child(1), table td:nth-child(1) {
+            background-color: var(--post-bg-color);
+        }
+        table tr:nth-child(1), table td:nth-child(2) {
+            background-color: white;
+            padding: 10px;
+        }
+    </style>
+    <link rel="icon" href="../assets/images/mask_icon.png" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <h1>Welcome to the HeroForum</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="forum.html">Forum</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section id="forum-threads">
-            <h2>Forum Threads</h2>
-            <ul>
-                <li><a href="#">Thread 1: Introduction to HeroForum</a></li>
-                <li><a href="#">Thread 2: Forum Guidelines</a></li>
-                <li><a href="#">Thread 3: Feature Requests</a></li>
-                <!-- Add more threads as needed -->
-            </ul>
-        </section>
+    <div data-include="../header.html"></div>
 
-        <section id="new-thread">
-            <h2>Create a New Thread</h2>
-            <form action="#" method="post">
-                <label for="thread-title">Thread Title:</label>
-                <input type="text" id="thread-title" name="thread-title" required>
-                
-                <label for="thread-content">Content:</label>
-                <textarea id="thread-content" name="thread-content" required></textarea>
-                
-                <button type="submit">Post Thread</button>
-            </form>
-        </section>
-    </main>
+    <h1 class="forum-title" id="forum-title"></h1>
 
-    <footer>
-        <p>&copy; 2023 HeroForum. All rights reserved.</p>
-    </footer>
+    <template id="post-template">
+        <div class="post">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="date_time">
+                            <img class="date_time_img" src="../assets/images/post.gif" alt="Icon">
+                            <span class="date_time_text"></span>
+                        </th>
+                        <th class="post_num"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="user_space">
+                            <div class="username"></div>
+                            <img class="user_icon" alt="User Icon">
+                        </div></td>
+                        <td class="content"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </template>
 
-    <script src="../assets/js/scripts.js"></script>
+    <div id="posts-container"></div>
+
+    <script type="module">
+        const params = new URLSearchParams(window.location.search);
+        const topic = params.get('topic');
+        if (!topic) {
+            console.error("No topic specified in the URL.");
+            document.getElementById('forum-title').textContent = "Error: No topic specified.";
+        }
+
+        // Dynamically import the correct forum module
+        import(`./forums/${topic}.js`).then(module => {
+        const posts = module.posts;
+        document.getElementById('forum-title').textContent = module.title;
+        const container = document.getElementById("posts-container");
+        const template = document.getElementById("post-template");
+
+        posts.forEach(post => {
+            const postElement = post.render(template);
+            const postNumberCell = postElement.querySelector("table th:nth-child(2)");
+            postNumberCell.textContent = `#${posts.indexOf(post) + 1}`;
+            container.appendChild(postElement);
+        });
+        }).catch(err => {
+            console.error("Failed to load forum:", err);
+        });
+    </script>
+    <div data-include="../footer.html"></div>
+    <script src="../assets/js/include.js" type="module"></script>
 </body>
 </html>

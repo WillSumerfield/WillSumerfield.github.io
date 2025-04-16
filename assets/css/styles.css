@@ -1,94 +1,50 @@
+:root {
+    --main-color: #F03A47;
+    --secondary-color: #1C4E87;
+    --border-color: #ccc;
+    --border2-color:rgb(8, 8, 8);
+    --bg-color: #a8bcdb;
+    --bg2-color: #1664ad;
+    --table-bg-color: #F5F5F5;
+    --table-bg2-color: #dfdfdf;
+    --text-color: #0f0f0f;
+    --text2-color: white;
+    --text3-color: #071922;
+    --text4-color: #0A2533;
+
+    --username-color: #2000d4;
+    --post-head-bg-color: rgb(27, 92, 153);
+    --post-bg-color: rgb(55, 126, 167);
+    --forum-title-color: #00313D;
+}
+html, body {
+    height: 100%;
+    overflow: auto; /* or scroll */
+}
 body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: Monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
-    padding: 20px;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav {
-    margin: 20px 0;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    background-color: #555;
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background-color: #777;
-}
-
-h1, h2, h3 {
-    font-weight: bold;
-}
-
-h1 {
-    font-size: 2.5em;
-}
-
-h2 {
-    font-size: 2em;
-}
-
-h3 {
-    font-size: 1.5em;
-}
-
-footer {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 0.8em;
-}
-
-.thread-list {
-    list-style-type: none;
     padding: 0;
 }
-
-.thread-list li {
-    background-color: #fff;
-    margin: 10px 0;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.thread-list li:hover {
-    background-color: #f9f9f9;
-}
-
-form {
-    margin-top: 20px;
-}
-
-input[type="text"], textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #555;
+header {
+    background-color: var(--main-color);
+    color: var(--text-color);/* var(--secondary-color); */
+    padding: 0; /* Removed vertical padding */
+    text-align: left;
+    border: 1px solid var(--border2-color);
+    border-left: None;
+    border-right: None;
+    height: 64px;
+    background-image: url('../images/mask.png'); /* Add mask image */
+    background-repeat: no-repeat;
+    background-position: 24px -42px; /* Position the mask on the left */
+    background-size: 384px; /* Adjust size of the mask */
+    background-blend-mode: multiply; /* Blend the mask with the background color */
+    display: flex;
+    align-items: center; /* Vertically align the text */
+    position: relative; /* Enable positioning for child elements */
+    justify-content: center; /* Center content horizontally */
+    gap: 10px; /* Add spacing between elements */
 }

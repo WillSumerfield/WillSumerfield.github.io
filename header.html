@@ -1,0 +1,57 @@
+<head>
+    <style>
+        header h1 {
+            font: 5em 'Bauhaus 93', cursive;
+            margin: 2px;
+            text-align: top;
+            line-height: 0.8;
+            position: absolute; /* Position relative to the screen */
+            top: 50%; /* Move to the vertical center */
+            left: 50%; /* Move to the horizontal center */
+            transform: translate(-50%, -50%); /* Adjust for the element's own dimensions */
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+        .localization-name {
+            font: 1em "Bauhaus 93";
+            color: var(--text4-color);
+            margin-left: 10px; /* Add spacing to the right of the H1 */
+            text-align: left;
+            line-height: 1.2;
+            position: absolute; /* Position relative to the screen */
+            top: 68%; /* Move to the vertical center */
+            left: calc(50% + 388px); /* Move to the horizontal center */
+            transform: translate(-50%, -50%); /* Adjust for the element's own dimensions */
+        }
+        .user-status {
+            font-size: 1em;
+            color: var(--text2-color);
+            font-family: Monospace;
+            border: 1px solid var(--border2-color); /* Added border */
+            position: relative;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+            margin-right: 20px;
+            padding: 0 5px 0 5px;
+        }
+        .my_username {
+            padding-top: 5px;
+            color: var(--text3-color);
+            font: bold 1.1em 'Verdana', sans-serif;
+        }
+    </style>
+</head>
+
+<header>
+    <h1>MASKS <span style="color: var(--secondary-color);">&</span> MESSAGES</h1>
+    <span class="localization-name">ARKHAM,<br>MASSACHUSETTS</span>
+    <div class="user-status">
+        <span>Logged in as:</span>
+        <span id="username" class="my_username">Guest592</span>
+    </div>
+</header>
