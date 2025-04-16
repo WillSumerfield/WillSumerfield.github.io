@@ -23,14 +23,17 @@
             width: auto; /* Adjust remaining columns to fill available space */
         }
         table td:nth-child(3), table th:nth-child(3) {
-            width: 5%; /* Second column width */
+            width: 10%;
         }
         table td:nth-child(4), table th:nth-child(4) {
             text-align: center;
-            width: 3%; /* Third column width */
+            width: 3%;
         }
         table td:nth-child(5), table th:nth-child(5) {
-            width: 6%; /* Fourth column width */
+            width: 6%;
+        }
+        table td:nth-child(6), table th:nth-child(6) {
+            width: 6%;
         }
         table th, table td {
             border: 1px solid var(--border2-color);
@@ -96,10 +99,33 @@
         .post-thread-btn:hover {
             background-color: var(--main-color);
         }
+        .forum-author {
+            font-weight: bold;
+            text-decoration: underline;
+            color: var(--username-color);
+        }
     </style>
     <link rel="icon" href="assets/images/mask_icon.png" type="image/x-icon">
 </head>
 <body>
+    <template id="announcement-template">
+        <tr>
+            <td><img src="assets/images/announcement.gif" alt="Icon"></td>
+            <td>Welcome to the Hero Forum! Check out the latest updates.</td>
+        </tr>
+    </template>
+
+    <template id="forum-template">
+        <tr>
+            <td><img class="forum-icon" alt="Icon"></td>
+            <td><a class="forum-topic"></a></td>
+            <td class="forum-author"></td>
+            <td class="forum-replies"></td>
+            <td class="forum-post-date"></td>
+            <td class="forum-last-post"></td>
+        </tr>
+    </template>
+
     <div data-include="header.html"></div>
     <main>
         <table>
@@ -112,46 +138,26 @@
             <tbody>
                 <tr>
                     <td><img src="assets/images/announcement.gif" alt="Icon"></td> <!-- Icon added -->
-                    <td>Welcome to the Hero Forum! Check out the latest updates.</td>
+                    <td>Welcome to the Masks and Messages, Arkham! Check out the latest updates below.</td>
                 </tr>
                 <tr>
                     <td><img src="assets/images/announcement.gif" alt="Icon"></td> <!-- Icon added -->
-                    <td>Don't miss our upcoming Hero Training Webinar on April 20, 2025.</td>
+                    <td>Don't miss our upcoming Fight Analysis Webinar on November 20th!</td>
                 </tr>
             </tbody>
         </table>
         <table>
             <thead>
                 <tr>
-                    <th></th> <!-- New column for the icon -->
+                    <th></th>
                     <th>Topic</th>
                     <th>Author</th>
                     <th>Replies</th>
+                    <th>Post Date</th>
                     <th>Last Post</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><img src="assets/images/thread.gif" alt="Icon"></td>
-                    <td><a href="pages/forum.html?topic=new_kid">How to become a hero?</a></td>
-                    <td>Admin</td>
-                    <td>15</td>
-                    <td>April 13, 2025</td>
-                </tr>
-                <tr>
-                    <td><img src="assets/images/thread.gif" alt="Icon"></td>
-                    <td><a href="pages/about.html">Favorite superhero movies</a></td>
-                    <td>JaneDoe</td>
-                    <td>8</td>
-                    <td>April 12, 2025</td>
-                </tr>
-                <tr>
-                    <td><img src="assets/images/thread.gif" alt="Icon"></td>
-                    <td><a href="pages/index.html">Hero training tips</a></td>
-                    <td>HeroFan99</td>
-                    <td>20</td>
-                    <td>April 11, 2025</td>
-                </tr>
+            <tbody id="forum-container">
             </tbody>
         </table>
         <a href="pages/new-thread.html" class="post-thread-btn"><img src="assets/images/thread.gif" alt="Icon">Post New Thread</a>
@@ -172,8 +178,25 @@
                 </li>
             </ul>
         </div>
-        <div data-include="footer.html"></div>
     </main>
+    <div data-include="footer.html"></div>
     <script src="assets/js/include.js" type="module"></script>
+
+    <script type="module">
+        import { FORUMS } from './assets/js/forum.js';
+        const container = document.getElementById("forum-container");
+        const template = document.getElementById("forum-template");
+        for (const file_index in FORUMS) {
+            const fileName = FORUMS[file_index];
+            const path = "./pages/forums/" + fileName + ".js";
+            import(path).then(module => {
+                console.log(`Loaded module from ${path}`, module);
+                const forum = module.forum.render(template, fileName);
+                container.appendChild(forum);
+            }).catch(err => {
+                console.error(`Failed to load module from ${path}:`, err);
+            });
+        }
+    </script>
 </body>
 </html>

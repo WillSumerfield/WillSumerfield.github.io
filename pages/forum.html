@@ -8,6 +8,11 @@
     <title>Forum</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <style>
+        .forum-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px;
+        }
         .forum-title {
             font-family: "Barlow", sans-serif;
             font-weight: 500;
@@ -15,12 +20,32 @@
             padding: 20px 0 0 10px;
             color: var(--forum-title-color);
         }
+        .home-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .back-button {
+            font-family: "Arial";
+            text-decoration: underline;
+            font-style: normal;
+            font-size: 0.5em;
+            color: var(--text3-color);
+            display: flex;
+            padding: 0 20px 0 0;
+            align-items: center;
+        }
+        .back-icon {
+            vertical-align: middle;
+            padding-right: 5px;
+        }
         .post { 
             margin: 0 10px;
         }
         .user_space {   
             padding: 0;
             text-align: center;
+            vertical-align: top;
         }
         .username {
             font-weight: bold;
@@ -94,7 +119,14 @@
 <body>
     <div data-include="../header.html"></div>
 
-    <h1 class="forum-title" id="forum-title"></h1>
+    <h1 class="forum-header">
+        <span class="forum-title" id="forum-title"></span>
+        <div class="home-wrapper">
+            <a href="../index.html" class="back-button">
+                <img src="../assets/images/home.gif" class="back-icon">Home
+            </a>
+        </div>
+    </h1>
 
     <template id="post-template">
         <div class="post">
@@ -110,10 +142,10 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><div class="user_space">
+                        <td class="user_space">
                             <div class="username"></div>
                             <img class="user_icon" alt="User Icon">
-                        </div></td>
+                        </td>
                         <td class="content"></td>
                     </tr>
                 </tbody>
@@ -133,8 +165,8 @@
 
         // Dynamically import the correct forum module
         import(`./forums/${topic}.js`).then(module => {
-        const posts = module.posts;
-        document.getElementById('forum-title').textContent = module.title;
+        const posts = module.forum.posts;
+        document.getElementById('forum-title').textContent = module.forum.title;
         const container = document.getElementById("posts-container");
         const template = document.getElementById("post-template");
 

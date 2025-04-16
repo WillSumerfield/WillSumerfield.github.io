@@ -16,7 +16,7 @@ export class Post {
       clone.querySelector(".username").textContent = this.user.username;
       clone.querySelector(".date_time_text").textContent = this.date_time;
       clone.querySelector(".user_icon").src = this.user.icon;
-      clone.querySelector(".content").textContent = this.content;
+      clone.querySelector(".content").innerHTML = this.content;
       return clone;
     }
   }
