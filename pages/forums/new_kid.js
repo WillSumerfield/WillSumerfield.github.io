@@ -2,7 +2,7 @@ import { Forum } from '../../assets/js/forum.js';
 import { Post } from '../../assets/js/post.js';
 
 const posts = [
-  new Post("wbc", "08/17/02 10:34 PM", `So I was at the Q-Mart over on 5th earlier, and some punk tried to sneak some merch out. Wasn't too sneaky about it, and the security was after him. Still woulda gotten away with it, but then this kid—like, barely a teenager—just grabs his arm and locks him down. Like, dude was flailing and trying to yank free, but nope, hard stop. Security came over, took the guy in, and the kid just mumbled something and peaced out before anyone could ask his name.
+  new Post("wbc", "08/17/02 10:34 PM", `So I was at the Q-Mart over on 5th earlier, and some punk tried to sneak some merch out. Wasn't too sneaky about it, and the security was after him. Still woulda gotten away with it, but then this kid (like, barely a teenager) just grabs his arm and locks him down. Like, dude was flailing and trying to yank free, but nope, hard stop. Security came over, took the guy in, and the kid just mumbled something and peaced out before anyone could ask his name.
 
 Anyone know who he is? New cape? Some random unregged [UC]? Kid was strong, at least.
 Wearing normal clothes - a tee and shorts. No mask or anything. Sandy hair.`),
