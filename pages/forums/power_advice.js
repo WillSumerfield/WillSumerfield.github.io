@@ -1,17 +1,20 @@
 import { Forum } from '../../assets/js/forum.js';
 import { Post } from '../../assets/js/post.js';
+import { DateTime } from '../../assets/js/datetime.js';
 
+
+const dt = new DateTime(6, 23, 2002, 17, 18);
 const posts = [
-  new Post("583", "06/23/02 5:18 PM", `Hey, I need some advice about powers - does anyone here have them? Just got them at school, but things went bad and I'm worried people will be able to trace what happened to me.`),
-  new Post("xmx", "06/23/02 5:23 PM", `Heyyy! What's your name?? Do you have it picked out already?`),
-  new Post("bfg", "06/23/02 5:23 PM", `No way!!! How did you get yours??! Maybe I can do the same thing 🥺`),
-  new Post("583", "06/23/02 5:24 PM", `I can't go into details, or share my name. I'm asking for advice on how to be anonymous.`),
-  new Post("xmx", "06/23/02 5:24 PM", `I meant your hero name, not your real one! Unless you're thinking of being a villain, haha`),
-  new Post("bfg", "06/23/02 5:25 PM", `We can't help unless you give us a little bit of info... Like, what happened? Give us a bit more than that, lol.
+  new Post("583", dt.offset(0), `Hey, I need some advice about powers - does anyone here have them? Just got them at school, but things went bad and I'm worried people will be able to trace what happened to me.`),
+  new Post("xmx", dt.offset(5), `Heyyy! What's your name?? Do you have it picked out already?`),
+  new Post("bfg", dt.offset(0), `No way!!! How did you get yours??! Maybe I can do the same thing 🥺`),
+  new Post("583", dt.offset(1), `I can't go into details, or share my name. I'm asking for advice on how to be anonymous.`),
+  new Post("xmx", dt.offset(0), `I meant your hero name, not your real one! Unless you're thinking of being a villain, haha`),
+  new Post("bfg", dt.offset(0), `We can't help unless you give us a little bit of info... Like, what happened? Give us a bit more than that, lol.
 And pls give tips on how to get our own powers <3`),
-  new Post("583", "06/23/02 5:26 PM", `Ha, thinking about hero.... I'm not sure about a name though. You can call me S. I guess I can tell you how it happened, but don't ask for more details.`),
-  new Post("bfg", "06/23/02 5:27 PM", `Finneee, but you have to tell us what your power is too!`),
-  new Post("583", "06/23/02 5:35 PM", `Basically it all happened in chemistry class this morning. We had this really tough assignment - A big test where we had to figure out all the stuff that was mixed into this green liquid. I've been really stressed about it, because the teacher is really mean and strict - like, he was yelling at this guy for using a microscope wrong, and called him an idiot in front of the whole class. So my nerves were pretty shot from the get-go.
+  new Post("583", dt.offset(1), `Ha, thinking about hero.... I'm not sure about a name though. You can call me S. I guess I can tell you how it happened, but don't ask for more details.`),
+  new Post("bfg", dt.offset(1), `Finneee, but you have to tell us what your power is too!`),
+  new Post("583", dt.offset(8), `Basically it all happened in chemistry class this morning. We had this really tough assignment - A big test where we had to figure out all the stuff that was mixed into this green liquid. I've been really stressed about it, because the teacher is really mean and strict - like, he was yelling at this guy for using a microscope wrong, and called him an idiot in front of the whole class. So my nerves were pretty shot from the get-go.
 
 We had to work in pairs, and I was partnered with this really tall, handsome guy I know. We did alright in the beginning, but we both got sort of stuck at this one point - like, I don't know what the teacher wanted from us, you know?? We tried fractal distillation, spectroscopy, and some other ones the guy knew about better than I did, but it wasn't working. It was really stressful because normally I'm a good student, but I was looking like a total moron in front of him, and he kept getting more and more frustrated as each new test failed.
 
@@ -24,26 +27,26 @@ And after a moment, I felt a release - emotional, physical, all of it. I took a 
 So that's pretty much it - Dad called and said he'd gotten an email to pick me up and my sister up, and that everything was fine but school was canceled. Luckily he didn't ask too many questions, but my sister just kept saying how sure she was that this was because of a villain, and that the smoke could've been poisoned. Dad said if that had been true we would already be 6 feet under, and not to worry. I wasn't really listening. I think he thought I was in shock - told me to relax and play some games. I guess I sort of was, but not because I was stressed. I just felt weird, like I'd just woken up from a very odd dream.
 
 I haven't told anyone, but what should I do now?? Will they figure out it was me? How can I hide it? How do I control this? I'm too scared to try again, but I know it was me. Should I be? I don't know what comes next - should I be testing out my power??`),
-  new Post("tg1", "06/23/02 5:39 PM", `Definitely fake, lol. Like that could give someone powers.
+  new Post("tg1", dt.offset(4), `Definitely fake, lol. Like that could give someone powers.
 You are all are getting baited.`),
-  new Post("bfg", "06/23/02 5:40 PM", `So you were just stressed about school? That happens to me all the time, and I still don't have a power
+  new Post("bfg", dt.offset(1), `So you were just stressed about school? That happens to me all the time, and I still don't have a power
 This isn't fairrrr 😭`),
-  new Post(`xmx`, "06/23/02 5:40 PM", `No way, S!! That sounds awful - at least your power is super cool!!
+  new Post(`xmx`, dt.offset(0), `No way, S!! That sounds awful - at least your power is super cool!!
 Can I be your sidekick?? You should PM me with your main account - I can keep your secret!`),
-  new Post("sus", "06/23/02 5:43 PM", `I hate to be that girl, but I'm not so sure about following the whole 'superhero' route.... 
+  new Post("sus", dt.offset(3), `I hate to be that girl, but I'm not so sure about following the whole 'superhero' route.... 
 Imagine going up against BubbleBomb, or trying to stop a bank robbery, lol. Best you could hope for is getting out in one piece, with a power like that.. Probably best to play it safe, NGL. There are better powers for heroes out there.`),
-  new Post("583", "06/23/02 5:44 PM", `Yea, I guess you're probably right... Does anyone know how I can avoid getting IDd though?? I'm really worried that one of the guys knows it was me, he was staring right at me when we were leaving the building. Is there anyone here with powers who can advise?? Please guys`),
-  new Post("tg1", "06/23/02 5:46 PM", `Wow, really laying it on thick LOL
+  new Post("583", dt.offset(1), `Yea, I guess you're probably right... Does anyone know how I can avoid getting IDd though?? I'm really worried that one of the guys knows it was me, he was staring right at me when we were leaving the building. Is there anyone here with powers who can advise?? Please guys`),
+  new Post("tg1", dt.offset(2), `Wow, really laying it on thick LOL
 If you're going to make up stories, at least pick a cooler power next time. Give us something interesting to read...`),
-  new Post("nav", "06/23/02 5:46 PM", `If this is legit -
+  new Post("nav", dt.offset(0), `If this is legit -
 Firstly, going to message boards about this stuff is NOT a good idea, lol. People can trace even the guest accounts. But since you already have i'll say this - keeping your identity safe is mega important for ANY [PP]. Villains will go after kids as young as middle school to try to recruit, so you shouldn't reveal your identity to ANYONE, just in case it gets out. 
 Def don't skip school, or you'll look super sus. Just act like normal tomorrow, and it'll be fine. If you feel like anyone suspects you, just play dumb. They have no proof, unless you forgot to mention something obvious (like, the smoke didn't come out of you, right??)
 Don't ever use in any public are, or at home.
 Good luck man`),
-  new Post("hsw", "06/23/02 5:46 PM", `What if they're just trying to bait a PP into talking to them? Would be pretty genius TBH. Well played if so 👏`),
-  new Post("hwk", "06/23/02 5:48 PM", `Wait, that sounds my old chemistry teacher, at South Emmerson High right? That assignment sucked, my condolences girl XD
+  new Post("hsw", dt.offset(0), `What if they're just trying to bait a PP into talking to them? Would be pretty genius TBH. Well played if so 👏`),
+  new Post("hwk", dt.offset(2), `Wait, that sounds my old chemistry teacher, at South Emmerson High right? That assignment sucked, my condolences girl XD
 Wish I coulda dropped a smoke bomb to get outta it too LOL`),
-  new Post("583", "06/23/02 5:49 PM", "<i>This thread has been locked</i>")
+  new Post("583", dt.offset(1), "<i>This thread has been locked</i>")
 ];
 
 export const forum = new Forum("Power Advice", posts, true);
