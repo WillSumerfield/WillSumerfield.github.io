@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero Forum</title>
+    <title>Masks & Messages</title>
     <link rel="stylesheet" href="assets/css/styles.css?v=1.3">
     <style>
         main {
@@ -27,13 +27,13 @@
         }
         table td:nth-child(4), table th:nth-child(4) {
             text-align: center;
-            width: 2.5%;
+            width: 50px;
         }
         table td:nth-child(5), table th:nth-child(5) {
-            width: 7%;
+            width: 128px;
         }
         table td:nth-child(6), table th:nth-child(6) {
-            width: 7%;
+            width: 128px;
         }
         table th, table td {
             border: 1px solid var(--border2-color);
@@ -184,12 +184,14 @@
 
     <script type="module">
         import { FORUMS } from './assets/js/forum.js';
+        import { DateTime } from "./assets/js/datetime.js";
+
         const container = document.getElementById("forum-container");
         const template = document.getElementById("forum-template");
         for (const file_index in FORUMS) {
             const fileName = FORUMS[file_index];
             const path = "./pages/forums/" + fileName + ".js";
-            import(path).then(module => {
+            await import(path).then(module => {
                 console.log(`Loaded module from ${path}`, module);
                 const forum = module.forum.render(template, fileName);
                 container.appendChild(forum);

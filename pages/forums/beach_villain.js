@@ -40,7 +40,8 @@ I hope he's right.`),
   new Post("sci", dt.offset(1), `That's a crazyyy fight, wow!! So he won without like, any violence? I wish I coulda seen it.
 I'm sure NorthStar is fine, heroes are trained to take a hit! 
 Glad you and your family are safe and sound - that's the thing to remember <3`),
-  new Post("tg1", dt.offset(0), `Jeez, why was that guy so late though? Seems like heroes should either run faster or use a car. Wonder how many people died because he skipped leg day.`),
+  new Post("tg1", dt.offset(0), `Jeez, why was that guy so late though? Seems like heroes should either run faster or use a car. Wonder how many people died because he skipped leg day.
+Also, isn't NorthStar only a sidekick lol`),
   new Post("nst", dt.offset(9), `Hey <u>@HappyHamster</u>, 
 I'm glad to hear you and your family are safe. It's the best part of my job to hear from the people who I can help, especially on the tough days where not everyone makes it out okay. It sounds like you and your family did everything right - sheltering in place can often be the safest thing to do when the situation is full of unknowns, like this one. You've been through an ordeal more scary than most adults have, and you should know there's no shame in reaching out to your school or parents if you feel like therapy could be useful.
 

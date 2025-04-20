@@ -37,11 +37,12 @@ export const USERS = {
     "btf": new User("[Moderator] BornToFly"),
     "sci": new User("StratusCiri"),
     "tg1": new User("TheOriginalGamer1"),
-    "nst": new User("[Verified Hero] NorthStar"),
+    "nst": new User("[Verified Sidekick] NorthStar"),
     "583": new User("Guest583"),
     "xmx": new User("xXMagicallySamXx"),
     "bfg": new User("BFEG"),
     "sus": new User("SuperScissors"),
     "hsw": new User("HyperSonicWrench"),
     "hwk": new User("HenchmenRKewl"),
+    "tkm": new User("TinkerMind"),
 }

@@ -3,7 +3,7 @@ import { Post } from '../../assets/js/post.js';
 import { DateTime } from '../../assets/js/datetime.js';
 
 
-const dt = new DateTime(8, 17, 2002, 22, 34);
+const dt = new DateTime(5, 14, 2002, 21, 22);
 const posts = [
   new Post("wbc", dt.offset(0), `So I was at the Q-Mart over on 5th earlier, and some punk tried to sneak some merch out. Wasn't too sneaky about it, and the security was after him. Still woulda gotten away with it, but then this kid (like, barely a teenager) just grabs his arm and locks him down. Like, dude was flailing and trying to yank free, but nope, hard stop - kid's arms musta been steel. Security came over, took the guy in, and the kid just mumbled something and peaced out before anyone could ask his name.
 

@@ -1,10 +1,11 @@
 import { Post } from './post.js';
 
 export const FORUMS = [
-    "new_kid",
     "tempest_arrest",
-    "beach_villain",
+    "fight_analysis",
     "power_advice",
+    "beach_villain",
+    "new_kid",
 ]
 
 const openForumIcon = "./assets/images/thread.gif";
@@ -20,8 +21,8 @@ export class Forum {
         this.title = title;
         this.posts = posts;
         this.author = posts[0].user;
-        this.post_date = posts[0].date_time;
-        this.last_post_date = posts[posts.length-1].date_time;
+        this.post_date = posts[0].datetime;
+        this.last_post_date = posts[posts.length-1].datetime;
         this.replies_count = posts.length;
         this.locked = locked;
         this.posts = posts;
@@ -36,7 +37,6 @@ export class Forum {
         clone.querySelector(".forum-replies").textContent = this.replies_count;
         clone.querySelector(".forum-post-date").textContent = this.post_date;
         clone.querySelector(".forum-last-post").textContent = this.last_post_date;
-        console.log(clone)
         return clone;
     }
 }

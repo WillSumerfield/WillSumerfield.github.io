@@ -64,4 +64,11 @@ export class DateTime {
     toString() {
         return `${this.month.toString().padStart(2, '0')}/${this.day.toString().padStart(2, '0')}/${this.year} ${this.hour.toString().padStart(2, '0')}:${this.minute.toString().padStart(2, '0')}`;
     }
+
+    /**
+     * @returns {int}
+     */
+    toInt() {
+        return this.year*12*31*24*60 + this.month*31*24*60 + this.day*24*60 + this.hour*60 + this.minute;
+    }
 }
