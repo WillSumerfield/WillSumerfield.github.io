@@ -10,7 +10,7 @@ From Z-list sidekicks to comedic-relief villains, we've seen a lot of <i>choice<
 I hope that you've all brought your worst candidates! Let's all sit back, eat some popcorn, and scratch our heads at the definition of 'superpower' together!`),
   new Post("hsm", dt.offset(7), `Our first nominee is the infamous, "FloridaMan". Our hero made his debut in March of this year, after uploading a video of himself wrestling a crocodile in the nude. FloridaMan proudly proclaims the ability to dissolve teeth with his saliva - evidenced by the gummy gator in the video, dubbed 'Patrica'. I'm sure that made his first date something to remember! He assured his viewers that his <i>superpower</i> doesn't affect his own teeth, and that the gaps in his smile are just a result of "eatin' right"`),
   new Post("rin", dt.offset(5), `LOL - just watched the video, literally the grossest thing I've ever seen. Are we sure the gator had its teeth to begin with XD`),
-  new Post("hsm", dt.offset(0), `He released a follow-up video where he demonstrated it's power, but that video was taking down for a reason. Some things are better left to the imagination...`),
+  new Post("hsm", dt.offset(0), `He released a follow-up video where he demonstrated it's power, but that video was taken down for a reason. Some things are better left to the imagination...`),
   new Post("rin", dt.offset(1), `I don't think I want to imagine that...`),
   new Post("nav", dt.offset(1), `Amazing - I'd forgtten about that guy lol
 Okay, I've got a noimination:`),
