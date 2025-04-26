@@ -14,7 +14,7 @@ I hope that you've all brought your worst candidates! Let's all sit back, eat so
   new Post("rin", dt.offset(1), `I don't think I want to imagine that...`),
   new Post("nav", dt.offset(1), `Amazing - I'd forgtten about that guy lol
 Okay, I've got a noimination:`),
-  new Post("nav", dt.offset(5), `WindSurfer is a new PP you may have heard of - he discovered his power on accident after stumbling off a NY pier. Poor guy ended up over a mile out to sea in The Sound, trying to stay afloat in a 2 peice buisness suit. He must've been thanking his stars when a passing boat picked him up, but was doubtless wishing they'd let him drown when he realized the boat was owned by <i>The Gotham Gab</i>. That photo of his dripping suit was on those shitty tabloid banner ads for weeks, lol
+  new Post("nav", dt.offset(5), `WindSurfer is a new PP you may have heard of - he discovered his power on accident after stumbling off a NY pier. Poor guy ended up over a mile out to sea in The Sound, trying to stay afloat in a 2 peice buisness suit. He must've been thanking his stars when a passing boat picked him up, but was definitely wishing they'd let him drown when he realized the boat was owned by <i>The Gotham Gab</i>. That photo of him climbing into the boat with a dripping suit was on those shitty tabloid banner ads for weeks, lol
 He only figured out later that his power was to <i>ignore planitary rotation</i> while in the air... not really sure how to use that one 🤣`),
   new Post("hsm", dt.offset(3), `Hahahhaa - definitely a top contender. Sounds like an active detriment more than a 'power', poor guy!`),
   new Post("rin", dt.offset(2), `How do you even fall of a pier... sounds like he wasn't cool even before he got that power 🤣`),
