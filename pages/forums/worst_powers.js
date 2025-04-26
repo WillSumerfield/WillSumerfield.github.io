@@ -38,4 +38,4 @@ How have I not heard of this guy??? Absolutely amazing power - I vote this guy f
   new Post("hsm", dt.offset(1), `I think we have a winner! Poor guy, from his perspective he never even got to use his power lol`),
 ];
 
-export const forum = new Forum("Worst Power Awards", posts, true);
+export const forum = new Forum("Worst Power Awards", posts, false);
