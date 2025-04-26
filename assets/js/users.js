@@ -45,4 +45,8 @@ export const USERS = {
     "hsw": new User("HyperSonicWrench"),
     "hwk": new User("HenchmenRKewl"),
     "tkm": new User("TinkerMind"),
+    "hsm": new User("HeroSchmero"),
+    "rin": new User("Ringo"),
+    "czg": new User("CasperZeGhost"),
+    "hhb": new User("HeroicHoneyBadger"),
 }

@@ -1,8 +1,9 @@
-import { Post } from './post.js?v=1.4';
+import { Post } from './post.js?v=1.5';
 
 export const FORUMS = [
     "tempest_arrest",
     "fight_analysis",
+    "worst_powers",
     "power_advice",
     "beach_villain",
     "new_kid",
@@ -31,7 +32,7 @@ export class Forum {
     render(template, fileName) {
         const clone = template.content.cloneNode(true);
         clone.querySelector(".forum-icon").src = this.locked ? closedForumIcon : openForumIcon;
-        clone.querySelector(".forum-topic").href = "pages/forum.html?v=1.4&topic=" + fileName;
+        clone.querySelector(".forum-topic").href = "pages/forum.html?v=1.5&topic=" + fileName;
         clone.querySelector(".forum-topic").textContent = this.title
         clone.querySelector(".forum-author").textContent = this.author.username;
         clone.querySelector(".forum-replies").textContent = this.replies_count;
